@@ -14,12 +14,12 @@ library(xlsx)
 
 # read data
 
-toki20 <- read_csv("data/toki20_scrape.csv") %>% 
+toki20 <- read_csv("toki/toki20_scrape.csv") %>% 
   janitor::clean_names() %>% 
   mutate(size_liras = replace(size_liras, size_liras == 0, NA),
          houses = replace(houses, houses == 0, NA))
 
-toki21 <- read_csv("data/toki21_edit1.csv") %>% 
+toki21 <- read_csv("toki/toki21_edit1.csv") %>% 
   janitor::clean_names()%>% 
   mutate(liras = replace(liras, liras == 0, NA),
          konut_sayisi = replace(konut_sayisi, konut_sayisi == 0, NA))
@@ -97,4 +97,4 @@ for (i in 1:3404) {
   joined21$fourth[i] <- current_proj[4]
 }
 
-write_csv(joined21, 'toki_names1234.csv')
+write_csv(joined21, 'temp/toki_names1234.csv')

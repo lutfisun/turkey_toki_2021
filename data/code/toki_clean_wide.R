@@ -10,7 +10,7 @@ library(zoo)
 #-----------------------------------
 # toki
 
-tokidist_01 <- read_csv("data/toki_edit2.csv")
+tokidist_01 <- read_csv("toki/toki_edit2.csv")
 
 tokidist_01$pdy <- paste(tokidist_01$province, 
                          tokidist_01$district,
@@ -40,7 +40,7 @@ toki_02 <- tokidist_01 %>%
 
 #-----------------------------------
 ## add macroeconomic variables
-macroecon <- read_csv("data/evds_clean.csv") %>%
+macroecon <- read_csv("macro_and_population/evds_clean.csv") %>%
   select(date, usd_buy, cpi03_all, ppi_03, gov_rev, gdp)
 
 macroecon$yq <- gsub("-", " ", macroecon$date)
@@ -237,7 +237,7 @@ toki_yearly <- toki_yearly %>%
   group_by(pdy) %>% 
   summarise_each(list(sum))
 
-write_csv(toki_yearly, 'toki_yearly.csv')
+write_csv(toki_yearly, 'temp/toki_yearly.csv')
 
 #-----------------------------------
 # toki_monthly
@@ -377,7 +377,7 @@ toki_monthly <- toki_monthly %>%
   group_by(pdym) %>% 
   summarise_each(list(sum))
 
-write_csv(toki_monthly, 'toki_monthly.csv')
+write_csv(toki_monthly, 'temp/toki_monthly.csv')
 
 
 

@@ -66,7 +66,7 @@ merged_yearly <- merged_yearly  %>%
          hou_pc = houses_sum / population)
 
 partisan_try <- lm(try_pc ~ akp + population + turnout_rate + as.character(year),
-               data = merged_yearly)
+                   data = merged_yearly)
 partisan_usd <- lm(usd_pc ~ akp + population + turnout_rate + as.character(year),
                    data = merged_yearly)
 partisan_hou <- lm(hou_pc ~ akp + population + turnout_rate + as.character(year),
@@ -77,7 +77,5 @@ summary(partisan_usd)
 summary(partisan_hou)
 
 write_csv(merged_yearly, 'merged_yearly01.csv')
-
-
 
 

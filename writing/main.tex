@@ -1,0 +1,243 @@
+\documentclass[10pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\usepackage{authblk}
+\usepackage{tikz-cd}
+\usepackage{textcomp}
+\usepackage{float}
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage{rotfloat}
+\usepackage{multirow,array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\DeclareMathOperator{\sign}{sgn}
+%SetFonts
+\usepackage[utf8]{inputenc}
+\usepackage{newunicodechar}
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\usepackage{booktabs,caption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+\newunicodechar{￥}{\textyen}
+\DeclareTextCommandDefault{\textyen}{%
+  \vphantom{Y}%
+  {\ooalign{Y\cr\hidewidth\yenbars\hidewidth\cr}}%
+}
+
+\newcommand{\yenbars}{%
+  \vbox{
+     \hrule height.1ex width.4em
+     \kern.15ex
+     \hrule height.1ex width.4em
+     \kern.3ex
+  }%
+}
+
+%SetFonts
+\linespread{1.2}
+%\setlength{\tabcolsep}{18pt}
+
+\title{\textbf{Redistributive Consequences of Competitive Authoritarianism: Evidence from the Turkish Mass Housing Administration}}
+\author[1]{Chris Dann}
+\author[2]{Lutfi Sun}
+\author[3]{Yihan Zhu}
+\affil[1]{\small The London School of Economics, London, UK}
+\affil[2]{\small University of Texas at Austin, Texas, United States}
+\affil[3]{\small University of Oxford, Oxford, UK}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Since the rise of the Justice and Development (AKP) party in 2002, it has become seemingly clear that Turkey has become a `competitive authoritarian' regime: democratic elections still determine the incumbent, but the electoral playing field is wholly unfair due to state abuses of power. Yet, although the pre-existing literature has studied how various public projects have contributed to the AKP's sustained support, there is less empirical and theoretical evidence concerning the redistributive consequences Turkey's competitive authoritarianism has had on citizens. In this paper, we therefore aim to fill this gap, focusing on a heavily centralised state-run public good -- the Turkish Mass Housing and Development Administration (TOKI). Notwithstanding previous efforts, we develop our own dataset on the number of  across Turkey's 81 provinces between 2002-2020. Exploiting within-province variation shows that a 1\% increase in vote share to the AKP increases \dots by \dots. Second, to show this effect is not sensitive to the choice of areal unit, we further develop a novel dataset on the number of TOKI houses and expenditure amounts across various project types for all of Turkey's 1003 districts from 2003-2020. 
+
+This positive effect holds in the face of a plethora of robustness checks. Overall, we show how democratic erosion in Turkey towards competitive authoritarianism has consequentially transformed housing policy away from being a collective public good to being a highly selective political tool. 
+
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+
+The rise to power of Reccip Erdogan's AKP party . In light of the global `democratic recess' various scholars argue we are currently experience, Turkey is one of the most frequently cited examples \dots 
+
+
+
+
+Although various prior studies have explored the impact of political connections to the AKP and increased favouritism concerning public procurement and TOKI, many of these studies have certain gaps we try to fill. Firstly, most studies have not explored the period post-2013 with Erdogan's concentration of power and the decrease in constraints on the executive. Second, most studies have not tried to methodologically explore how robust the effects are at both the local \textit{and} provincial level. 
+
+We also try to look at the \textit{cumulative} experience of districts with regards to AKP incumbency. As documented in the political economy literature, oftentimes it is the historical experience that matters when studying politico-economic phenomena versus looking at differences contemporarily (Persson \& Tabellini, 2009). As such, a key variable we use is the proportion of years \dots . Creating a variable in this manner also helps us fully explore the 2002-2020 time-variation of the data without having to ``chunk'' vote shares between election years. 
+
+There is limited research on the economic consequences of democratic backsliding. Although Acemoglu et al. (2019) show that autocratizations lead to decreases in growth, this refers to system changes as one-off events versus a piecemeal process of institutional erosion. 
+
+\section{Relevant Literature}
+
+In political economy, there is evidence concerning the political underpinnings of housing. For example, Besley and Mueller (2012) provide empirical evidence that increases in violent conflict in Northern Ireland decreased housing prices from the 1980s through to 2000s. Ansell (2019) provides a good overview with regards to how politics affects housing allocation. As aptly highlighted, housing or any type of personal real estate is likely to be the most consequential economic asset individuals may (or may not) possess ownership over in their lifetimes, and so such a salient good has vast political ramifications. 
+
+Although Luca (2016) argues that distributive politics has a limited causal explanation on province-level economic growth in Turkey, this conclusion doesn't necessarily crossover to housing policy. 
+
+Although Acemoglu \dots notes the deterioration in politico-economic institutions, in keeping with the political science literature on hybrid regimes, a large amount of evidence categorises Turkey as a `competitive authoritarian' regime (Levitsky \& Way, 2002, 2010). 
+
+Although previous studies have evidenced targeted redistribution by the AKP, most of this work has been at the level of Turkey's 81 province. Albeit insightful, and subsequently informing our own paper, it is hard to explore specific causal mechanisms at such an aggregate unit of analysis. Ideally, at a more granular levels of analysis, this not only provides more observations in general, but also \dots 
+
+There are a few issues with Marschall et al.'s (2016) approach. Firstly, by pooling AKP support and TOKI housing projects and expenditure from 2003-2014, they do not exploit within-district variation to try and truly isolate an unbiased effect. Arguably, without controlling for basic factors such as time-invariant heterogeneity at the district-level and common macro ``shocks'', identification is inevitably plagued by omitted variables. For example, district-level fixed effects would help caapture things such as geography, if geographic characteristics were a key determinant of either AKP support and TOKI distribution. Moreover, year fixed-effects would control for much of Turkey's macroeconomic environment, such as the national interest rate, inflation rate and exchange rate, all of which would impact, say, construction costs. 
+
+\section{Background}
+
+
+
+\section{Data}
+
+TOKI publishes project names and auction documents in its website. Each project belongs to one of 
+
+
+We scraped this data and matched each project with a district and month based on the project name and auction date. We take the winning bid as the approximate cost of the project. For 24 projects whose cost variable is missing, we take the average
+
+, project  information on projects in its website. We scraped this 
+
+We used Turkish Statistical Instutute's regional variables database for district level population measures in years 2007-2020. There is a lack of annual data in earlier years as Turkey transitioned from nationwide census to address based population counting system in 2007. We estimated the previous years using 2000 census data and assuming a linear trend. 
+
+\footnote{yo}
+
+We retrieved macroeconomic variables such as inflation and exchange rates from EVDS (!!TRANSLATE!!) which is a government website that pulls together data from across multiple ministires and the Central Bank of Turkey.
+
+For election results, we relied on data provided by Turkey's High Election Court website, ysk.gov.tr. In the span of 2000-2020, 11 districts changed names and 72 additional districts were formed. Elections fail to reflect the new names and borders when the changes are made in between elections which makes it difficult to merge datasets. Most of the district-level literature discards these discontinued or newly formed districts and focuses on the ones with continuous borders (!!Marschall and business cycles paper). Such a method would result in us ignoring a considerable amount of major TOKI projects. To avoid losing these observations, we reflected the district changes in the election data as well. For some districts, this meant a simple name change. When there is a change in borders, however, we estimated hypothetical election results taking averages across the municipalities forming the new district.
+
+There are various ways to measure the AKP's local incumbency power. Although Bircan and Saka (2021) define AKP-aligned provinces based on whether the central district mayor is pro-AKP, there is no reason to suggest this . TOKI can be distributed across multiple districts, of which a non-central mayor could help facilitate contract arrangements \dots . Hence, we focus on the proportion of mayors approach. 
+
+Because elections occur at the municipality level and we are aggregating up to the district level, a natural method is the look at the proportion of mayors attached to the AKP per district. Hence, a 0 would mean a district has no municipality with a single AKP mayor, a 1 would mean all mayors across all municipalities in a district belong to the AKP, with everything in between representing the proportion. Related to this, a second measure is to create a dummy variable for whether at least 50\% of municipalities in a district have AKP mayors. Finally, a third separate way is to sum the total votes across all municipalities in a given district, and see if the AKP's total number of votes is the largest amongst all other parties' aggregates. 
+
+
+
+\section{Empirics}
+
+\subsection{Baseline Approach}
+
+Our baseline approach exploits the panel structure of our dataset, using standard two-way fixed effects that capture time-invariant heterogeneity at the district level and annual global idiosyncratic ``shocks''. 
+
+\begin{equation}
+Y_{dpt} = \alpha_{dp}+\delta_t+\beta\text{AKP}_{dpt} + \mathbf{\rho}\mathbf{X}'_{dpt}+\varepsilon_{dpt}, \ \text{where} \ Y_{dpt}=\log \left (\frac{\text{Expenditure}_{dpt}}{\text{Population}_{dpt}} + \epsilon \right)
+\end{equation}
+
+$Y_{pdt}$ represents our main dependent variable of interest, which is the natural logarithm of total contract expenditure on TOKI infrastructure projects per capita in district $d$ of province $p$ in year $t$. Given the thick-tailed distribution of TOKI projects with excess zeroes, we add a small amount, $\epsilon$, when taking the natural logarithm so observations remain non-missing.\footnote{Similar to Michalopoulos and Papaioannou (2013) regarding excess zeroes with nightlight data, we use $\epsilon=0.01$, although results are robust to alternative values (see Appendix).} As standard, normalising contract expenditure by population helps account for any population dynamics that could affect TOKI distribution, such as the ``size'' of districts if they were metropolitan areas or cities. District-level fixed effects, $\alpha_{dp}$, help control for any unobserved time-invariant heterogeneity, such as the 2003-2020 time-average local economic growth rate. Year fixed effects, $\delta_t$, will help capture global idiosyncrasies, such as nationwide constitutional changes, in addition to important macroeconomic factors that could affect TOKI distribution and funding, such as the exchange rate, inflation rate and interest rate. Finally, $\mathbf{X}'_{dpt-1}$ captures other district-level observable characteristics that could affect both TOKI distribution and AKP vote shares, such as turnout rates and other population dynamics. 
+
+\subsection{Robustness Checks}
+
+\textbf{Count Models}
+
+As mentioned above, given we are focusing principally on large infrastructure contracts that TOKI has awarded in certain districts, such projects are generally uncommon across districts per year. Although taking the natural logarithm of TOKI contract expenditure per capita and adding a small amount to this figure was one method to try and ``normalise'' the dependent variable, the distribution post-logarithm is still thick-tailed. Hence, models that rely on normally distributed variables may poorly ``fit'' the data, which could subsequently lead to specious inference. 
+
+An alternative approach to measuring TOKI distribution is thus to look at i) the total physical number of houses awarded as part of a contract, which are subsequently expected to be developed, and/or ii) the number of projects (i.e. contracts) of any project type awarded to a given district. This subsequently permits the use of count models. Specifically we use the fixed-effects Poisson quasi-maximum likelihood count model with cluster-robust standard errors (Hausman et al. 1984; Wooldridge 1999; Cameron and Trivedi 2015). 
+\begin{equation}
+    \mathbf{E}[h_{dpt}|\text{AKP}_{dpt},\alpha_{dp}] = \alpha_{dp}\exp (\beta \text{AKP}_{dpt})
+\end{equation}
+
+The fact that we have multiple zeroes suggests we have an ``excess zeroes'' problem. However, to the best of our knowledge, no standard model has been developed for data with a panel structure or applied in the literature.\footnote{Engel and Moffatt (2014) develop methods to estimate double-hurdle models using panel data, but this only deals with random effects.}$^,$\footnote{Other contributions in the broader political economy literature using standard outcome variables with excess zeroes do not model the zeroes as being driven by a separate underlying data-generating process. See for example Besley and Persson (2011), Burgess et al. (2015) and Michalopoulos and Papaioannou (2013).} Hence, to try and deal with any threats to inference resulting from excess zeroes, with perform ad hoc robustness checks by dropping certain districts based on various relevant criteria. First, we drop all districts that never received a TOKI project over our entire time period of interest, 2002-2020.\footnote{For districts that were newly created around 2013, we drop those districts that never received a TOKI project since their coming into being (i.e. 2013-2020).} Next, we drop all districts that received TOKI projects less than 10\% of years over their existence (e.g. for districts that have always been around since 2004, we drop districts that received distinct projects over less than ($(2020-2004+1)/10\approx$)2 different years; we apply a similar calculation to newly created districts). 
+
+\subsection{Heterogeneous Effects}
+
+Fortunately, our dataset specifically outlines which category a TOKI project belongs to. Hence, we can explore which specific project categories this pro-AKP and anti-CHP bias holds with regards to TOKI distribution. 
+
+If there is indeed an effect, we should expect AKP vote shares to affect those infrastructure projects that are most salient to the welfare of pro-AKP voters. For example, we should expect a statistically significant effect for housing, but not for sports stadiums. Of course, these results could be driven by the differences in number of contracts awarded per category (i.e. housing is likely to have significantly more contracts versus sports stadiums), but these checks are still worth exploring. 
+
+
+
+\subsection{Disentangling Swing versus Core Strategies}
+
+A priori, it is unclear what kind of electoral strategy the AKP uses with regards to TOKI distribution. The results above show there is indeed a pro-AKP and anti-CHP bias, but \textit{how} exactly the AKP set about doing this requires further exploration regarding plausible mechanisms. On the one hand, the AKP could use it's hegemony to use TOKI in attracting swing voters where electoral competition is high, as Bircan and Saka (2021) find for bank credit lending. On the other hand, the AKP could simply be rewarding its ``base'' or core voters \dots. 
+
+Theories of competitive authoritarianism are not well connected to the swing versus core vote strategy literature. Robinson and Torvik (2009) are arguably one of the closest theoretical models that reveal conditions for the ``real'' swing voters curse \dots 
+
+Interestingly, while the AKP margin variable is statistically significant, the CHP one is not. This suggests that irrespective of CHP margin, areas 
+
+Is it just the case that the AKP control areas that are more urban and so where TOKI is more likely to be important? 
+
+\subsection{Dynamic Panel Data Methods}
+
+The feedback effects between TOKI distribution and AKP vote share are a clear threat to inference. Indeed, as highlighted in the literature, \dots find that TOKI improves AKP vote shares, not the other way around. Although their approach is econometrically flawed, it could still be the case that TOKI projects do augment the AKP's electoral footing in certain districts, and lags of AKP incumbency, as per specification (4.1), are but an imperfect ad hoc way to deal with this. Consequently, we now explore dynamic panel data specifications . Including a lag of $Y_{pdt}$ in the right-hand side of specification (4.1) immediately introduces the standard Nickel bias \dots (Nickel 1981). 
+
+In light of our ``large $N$, small $T$'' setting, we thus use Arellano-Bond estimator \dots 
+
+
+
+\subsection{Province-Level Results}
+
+Notwithstanding our district-level results, one source of endogeneity could stem from the various district splits that have occurred throughout the AKP's consolidation of power over the last two decades. Although we tried to account for these splits by conditioning on a basic dummy variable, there could still be geographical idiosyncrasies that affect TOKI distribution through gerrymandering practices that are correlated with AKP vote shares. Consequently, another ad hoc method to account for this threat to inference, albeit imperfect, is to aggregate our data up to the province level. Unlike Turkey's districts, the 81 provinces that comprise the nation's geographic make-up have remained unchanged since the AKP first entered power in 2002. 
+
+
+
+\textbf{Relative Vote Share}
+
+Previous arguments have been made that the AKP favours its base but punishes its opposition. So perhaps there is heterogeneity with respect to the size of the AKP vote share relative to their main opposition rivals: the CHP. Hence, we measure ``relative'' AKP vote share by taking the difference between AKP and CHP vote shares. 
+
+\textbf{Basic Robustness Checks}
+
+We might think that the allocation decision is based primarily on population factors; hence we control for a range of demographic variables. We also perform subgroup analysis by dropping the largest cities, as it may be the case that heavily urban areas are natural ``real estate'' for housing projects. Moreover, given all provinces possess a \textit{merkez ilçe}, which acts as the capital of the province, we also run specifications dropping all of these districts.  
+
+We might think allocation is confounded by other political variables, such as the vote shares of other parties, turnout rates, etc. 
+
+Effect could also be confounded by spatial autocorrelation processes in both TOKI expenditures and AKP vote share, so we also control for this. 
+
+If the effect of AKP vote share on the allocation decision is genuinely causal, then studying the dependent variable in logs or levels should be irrelevant to an unbiased estimate (Deaton, \dots). 
+
+Also control for districts that were new and/or disappeared over time. 
+
+\textbf{Probing Heterogeneity}
+
+We have data across project types, and so we should expect AKP vote share to increase projects that are actually relevant. Hence, we run our preferred specification where we vary the dependent variable by TOKI project type. 
+
+
+
+Key threat to inference is reverse causality: does AKP vote share determine TOKI allocation, or does TOKI allocation bolster AKP vote share? First, performing the exact opposite regression finds no statistically significant effect of TOKI housing expenditure on AKP vote share. Although this is an ad hoc robustness check, this does not by default rule out reverse causality conceptually, as there could still be two-way feedback mechanisms 
+
+Is there even further ``selection'' across AKP provinces (i.e. on average yes AKP prefer their own districts + provinces, but do they prefer poor AKP-pro districts + provinces)? So it might be the case that AKP is still used where it's supposed to be used (i.e. for the poor), but this is only across AKP districts only. 
+
+\subsection{TOKI Bias Over Time}
+
+Although the above regressions evidence the general pro-AKP and anti-CHP bias with regards to TOKI distribution, these are average effects. In light of the general widespread politico-economic changes that have occurred in Turkey over the last two decades, ideally we want to explore how these biases have changed \textit{dynamically} over time. 
+
+Is it the case that AKP mayors are actually favouring their voters? Or that it is just easier in pro-AKP places to establish TOKI projects with profiteering in mind? 
+
+\section{Conclusion}
+
+Although we do not find evidence of a political business cycle per se, given TOKI distribution tends to increase post-election once the AKP is in power at the local level, our findings complement that of Bircan and Saka (2021). The AKP appear to use credit lending as a tool around election periods to consolidate power, but then exploit TOKI 
+
+
+Tables:
+
+1) District level \\
+2) Province level (check results aren't specific to geographical unit) \\
+3) Cumulative AKP pro-mayor experience, and cumulative expenditure (i.e. expenditure ``carries over'' per year) \\
+4) Heterogeneous effects by project type \\
+5) Count models to overcome extreme number of 0s \\
+6) Robustness checks based on population dynamics (e.g. dropping major cities) \\
+7) Political business cycle (null effect?)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+

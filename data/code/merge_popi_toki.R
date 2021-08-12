@@ -46,12 +46,16 @@ gen_elec <- read_csv("elections/gen_elections.csv")  %>%
   mutate(pdy = paste(province_district, year, sep= "_"))  %>%
   select(-c(year_province_district, province_district))
 
+cabinet <- read_csv("elections/cabinet_districtchanges.csv")
+  
 popi_gen <- popi  %>% 
   left_join(gen_elec, by = c("pdy"="pdy", "year" = "year",
-                             "province" = "province", "district" = "district"))
+                             "province" = "province", "district" = "district"))  %>% 
+  left_join(cabinet, by = c("year" = "year", "province" = "province", "district" = "district"))
 
-toki_yearly <- read_csv("temp/toki_yearly.csv") 
-  
+toki_yearly <- read_csv("temp/toki_yearly.csv")   %>% 
+  select(-c(imp_try_sum, imp_usd_sum))
+
 merged_yearly <- popi_gen  %>% 
   left_join(toki_yearly,  
             by = c("pdy"="pdy"))
@@ -61,9 +65,13 @@ names(merged_yearly)
 merged_yearly[is.na(merged_yearly)] <- 0
 
 merged_yearly <- merged_yearly  %>% 
-  mutate(try_pc = imp_try_sum / population,
-         usd_pc = imp_usd_sum / population,
+  mutate(try_pc = real_try_sum / population,
+         usd_pc = dollars_sum / population,
          hou_pc = houses_sum / population)
+
+
+write_csv(merged_yearly, 'merged_yearly02.csv')
+
 
 partisan_try <- lm(try_pc ~ akp + population + turnout_rate + as.character(year),
                    data = merged_yearly)
@@ -75,7 +83,5 @@ partisan_hou <- lm(hou_pc ~ akp + population + turnout_rate + as.character(year)
 summary(partisan_try)
 summary(partisan_usd)
 summary(partisan_hou)
-
-write_csv(merged_yearly, 'merged_yearly01.csv')
 
 

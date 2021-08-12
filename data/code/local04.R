@@ -28,23 +28,27 @@ for (i in c(1:81)) {
 mahalli <- Reduce(function(...) merge(..., all=T), mahalli_list)
 
 names(mahalli)
+
 mahalli <- mahalli %>% 
   clean_names() %>% 
-  select(c("province", "ilce", "belediye", "kayitli_secmen_sayisi", "oy_kullanan_secmen_sayisi_ve_orani_percent", 
-           "gecerli_oy_sayisi", "ak_parti", "chp", "mhp", "bagimsizlar", "saadet_partisi")) %>%
+  #select(c("province", "ilce", "belediye", "kayitli_secmen_sayisi", "oy_kullanan_secmen_sayisi_ve_orani_percent", 
+  #         "gecerli_oy_sayisi", "ak_parti", "chp", "mhp", "bagimsizlar", "saadet_partisi")) %>%
   rename("district" = "ilce",
          "municipality" = "belediye",
          "registered_voters" = "kayitli_secmen_sayisi",
          "attended_voters" = "oy_kullanan_secmen_sayisi_ve_orani_percent",
          "valid_votes" = "gecerli_oy_sayisi",
          "akp" = "ak_parti",
-         "sp" = "saadet_partisi")   %>%
+         "sp" = "saadet_partisi",
+         "independent"  = "bagimsizlar")   %>%
   mutate(
     district = replace_na(district, 'merkez'),
-    turnout = 100 * attended_voters / registered_voters,
-    akp_won = akp > max(chp, mhp, sp, bagimsizlar),
-    chp_won = chp > max(chp, mhp, sp, bagimsizlar),
-    mhp_won = mhp > max(chp, mhp, sp, bagimsizlar)
+    municipality = coalesce(municipality, district),
+    year = 2004
+    #turnout = 100 * attended_voters / registered_voters,
+    #akp_won = akp > max(chp, mhp, sp, bagimsizlar),
+    #chp_won = chp > max(chp, mhp, sp, bagimsizlar),
+    #mhp_won = mhp > max(chp, mhp, sp, bagimsizlar)
   )
 
 mahalli$province <- tolower(mahalli$province)
@@ -63,22 +67,85 @@ mahalli$district <- gsub("ö", "o", mahalli$district)
 mahalli$district <- gsub("ş", "s", mahalli$district)
 mahalli$district <- gsub("ü", "u", mahalli$district)
 
+mahalli$municipality <- tolower(mahalli$municipality)
+mahalli$municipality <- gsub("ğ", "g", mahalli$municipality)
+mahalli$municipality <- gsub("ç", "c", mahalli$municipality)
+mahalli$municipality <- gsub('ı', 'i', mahalli$municipality)
+mahalli$municipality <- gsub("ö", "o", mahalli$municipality)
+mahalli$municipality <- gsub("ş", "s", mahalli$municipality)
+mahalli$municipality <- gsub("ü", "u", mahalli$municipality)
+
 names(mahalli)
+
+#
+
+library(haven)
+local_09 <- read_dta("elections/local/local_elections_2009_appended.dta")
+local_14 <- read_dta("elections/local/local_elections_2014_appended.dta")
+local_19 <- read_dta("elections/local/local_elections_2019_appended.dta")
+
+locals <- bind_rows(local_09, local_14, local_19) %>% 
+  clean_names() %>% 
+  #select(c("province", "district", "municipality", "year", "kayitlisecmensayisi", 
+  #         "oykullanansecmensayisi", "toplamgecerlioy", "akpart_i", "chp", "mhp", "ba_gimsiztoplamoy", "saadet")) %>%
+  rename("registered_voters" = "kayitlisecmensayisi",
+         "attended_voters" = "oykullanansecmensayisi",
+         "valid_votes" = "toplamgecerlioy",
+         "akp" = "akpart_i",
+         "sp" = "saadet",
+         "independent" = "ba_gimsiztoplamoy"
+         )   
+
+names(locals)
+names(mahalli)
+
+locals <- bind_rows(locals, mahalli) %>% 
+  select(-c(district_municipality, itirazligecerlioysayisi, toplamgecersizoy, 
+            itirazsizgecerlioysayisi, sandik_sayisi,baskanlik_sayisi))
+
+  
+locals$municipality <- tolower(locals$municipality)
+locals$municipality <- gsub("ğ", "g", locals$municipality)
+locals$municipality <- gsub("ç", "c", locals$municipality)
+locals$municipality <- gsub('ı', 'i', locals$municipality)
+locals$municipality <- gsub("ö", "o", locals$municipality)
+locals$municipality <- gsub("ş", "s", locals$municipality)
+locals$municipality <- gsub("ü", "u", locals$municipality)
+
+locals$province <- tolower(locals$province)
+locals$province <- gsub("ğ", "g", locals$province)
+locals$province <- gsub("ç", "c", locals$province)
+locals$province <- gsub('ı', 'i', locals$province)
+locals$province <- gsub("ö", "o", locals$province)
+locals$province <- gsub("ş", "s", locals$province)
+locals$province <- gsub("ü", "u", locals$province)
+
+locals$district <- tolower(locals$district)
+locals$district <- gsub("ğ", "g", locals$district)
+locals$district <- gsub("ç", "c", locals$district)
+locals$district <- gsub('ı', 'i', locals$district)
+locals$district <- gsub("ö", "o", locals$district)
+locals$district <- gsub("ş", "s", locals$district)
+locals$district <- gsub("ü", "u", locals$district)
+
+names(locals)
+
+write_csv(locals, 'locals.csv')
 
 # add hdp
 
-mahalli_district <-  mahalli %>% 
-  group_by(province, district)  %>% 
-  summarize(
-    registered_voters = sum(registered_voters),
-    attended_voters = sum(attended_voters),
-    votes_akp = sum(akp),
-    votes_chp = sum(chp),
-    votes_mhp = sum(mhp),
-    ms_akp = sum(akp > max(chp, mhp, sp, bagimsizlar)),
-    ms_chp = sum(chp > max(akp, mhp, sp, bagimsizlar)),
-    ms_mhp = sum(mhp > max(chp, akp, sp, bagimsizlar))
-    )
+# mahalli_district <-  mahalli %>% 
+#  group_by(province, district)  %>% 
+#  summarize(
+#    registered_voters = sum(registered_voters),
+#    attended_voters = sum(attended_voters),
+#    votes_akp = sum(akp),
+#    votes_chp = sum(chp),
+#    votes_mhp = sum(mhp),
+#    ms_akp = sum(akp > max(chp, mhp, sp, bagimsizlar)),
+#    ms_chp = sum(chp > max(akp, mhp, sp, bagimsizlar)),
+#    ms_mhp = sum(mhp > max(chp, akp, sp, bagimsizlar))
+#    )
 
 
 

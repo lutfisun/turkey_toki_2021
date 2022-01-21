@@ -10,7 +10,7 @@ Operation order and purpose:
 
 1.  scrape_toki.py -output: raw/toki_projects_raw.xlsx
 
-    -   scrape projects from TOKI website browing by category on June 19th 2020.
+    -   scrape projects from TOKI website browsing by category on June 19th 2020.
     -   output: test.xlsx
     -   edited the output in excel to add project category (written as separater/subheader in the test output) to its corresponding rows.
     -   Some projects have missing year, but the row it is located can imply what year bidding took place. Or the firm's website may contain that information. So, we filled those years using based on the row of the observation (among other 2014 projects for example) and other online information about that project.

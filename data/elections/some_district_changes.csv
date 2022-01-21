@@ -1,0 +1,46 @@
+Fixed,change_year,change_type,province,old,new,Action taken on general elections,# years effected
+1,2008,split and merged,ankara,"altindag, cubuk",Pursaklar,Average election results and make new district,3
+1,2008,split and merged,istanbul,"Kadıköy, Üsküdar, Ümraniye, Kartal",atasehir,Average election results and make new district,3
+1,2008,split and merged,istanbul,"Umraniye, kartal",sancaktepe,Average election results and make new district,3
+1,2008,split and merged,izmir,"Konak, Buca, Gaziemir ",karabaglar,Average election results and make new district,3
+1,2008,name,Erzurum,ilica,aziziye,Changed name to match,3
+1,2008,merged,istanbul,eminonu,fatih,Changed name to match,3
+1,2008,split,istanbul,gaziosmanpasa,arnavutkoy,Changed name to match,3
+1,2008,split,adana,seyhan,cukurova,Copy paste results with new names,3
+1,2008,split,adana,yuregir,saricam,Copy paste results with new names,3
+1,2008,split,Antalya,merkez,"aksu, dosemealti, kepez, Konyaaltı, muratpasa",Copy paste results with new names,3
+1,2008,split,Diyarbakir,merkez,"Baglar, Yenisehir, sur, Kayapinar",Copy paste results with new names,3
+1,2008,name,Erzurum,merkez,"Palandoken, yakutiye",Copy paste results with new names,3
+1,2008,split,eskisehir,merkez,"Tepebasi, odunpazari",Copy paste results with new names,3
+1,2008,split,istanbul,buyukcekmece,basaksehir,Copy paste results with new names,3
+1,2008,split,istanbul,buyukcekmece,beylikduzu,Copy paste results with new names,3
+1,2008,split,istanbul,umraniye,cekmekoy,Copy paste results with new names,3
+1,2008,split,istanbul,buyukcekmece,esenyurt,Copy paste results with new names,3
+1,2008,split,istanbul,gaziosmanpaşa,sultangazi,Copy paste results with new names,3
+1,2008,split,izmir,bornova,bayrakli,Copy paste results with new names,3
+1,2008,split,kocaeli,golcuk,basiskele,Copy paste results with new names,3
+1,2008,split,kocaeli,merkez,"cayirova, darica, dilovasi, izmit, kartepe",Copy paste results with new names,3
+1,2008,split,mersin,merkez,"akdeniz, mezitli, toroslar, yenisehir",Copy paste results with new names,3
+1,2008,split,sakarya,merkez,"adapazari, arifiye, erenler, serdivan",Copy paste results with new names,3
+1,2008,split,samsun,merkez,"atakum, canik, ilkadim",Copy paste results with new names,3
+1,2013,name,Aydin,merkez,Efeler,Changed name to match,2
+1,2013,split,Denizli,merkez,merkezefendi,Changed name to match,2
+1,2013,merged,Denizli,"akkoy, merkez",pamukkale,Changed name to match,2
+1,2013,name,siirt,aydinlar,tillo,Changed name to match,3
+1,2013,name,mardin,merkez,artuklu,Changed name to match,2
+1,2013,name,ordu,merkez,altinordu,Changed name to match,2
+1,2013,name,trabzon,merkez,ortahisar,Changed name to match,2
+1,2013,split,balikesir,merkez,"Altieylul, karesi",Copy paste results with new names,2
+1,2013,split,hatay,merkez,"Antakya, arsuz, defne, payaz",Copy paste results with new names,2
+1,2013,split,kahramanmaras,merkez,"dulkadiroglu, onikisubat",Copy paste results with new names,2
+1,2013,split,manisa,merkez,"sehzadeler, yunusemre",Copy paste results with new names,2
+1,2013,split,mugla,merkez,"mentese, seydikemer",Copy paste results with new names,2
+1,2013,split,sanliurfa,merkez,"eyyubiye, haliliye, karakopru",Copy paste results with new names,2
+1,2013,split,tekirdag,merkez,"ergene, kapakli, suleymanpasa",Copy paste results with new names,2
+1,2013,split,van,merkez,"ipekyolu, tusba",Copy paste results with new names,2
+1,2013,split,zonguldak,merkez (split and still continued),"kilimli, kozlu",Copy paste results with new names,2
+1,2013,merged,malatya,merkez,"battalgazi, yesilyurt",Deleted old,2
+1,2017,name,Ankara,Kazan,Kahramankazan,Changed name to match,1
+1,2017,split,aksaray,merkez,sultanhani,Copy paste results with new names,1
+1,2017,split,artvin,hopa,kemalpasa,Copy paste results with new names,1
+1,2018,split,Hakkari,semdinli,derecik,Copy paste results with new names,3

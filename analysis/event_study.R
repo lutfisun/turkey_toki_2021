@@ -154,4 +154,37 @@ gr_usd_19 <-ggplot(event_19, aes(x=year, y=usd_pc, group=party)) +
 
 gr_usd_19
 
+###
+
+
+spec_09 <- toki_district   %>% 
+  subset( year > 2004 & year < 2014 ) %>% 
+  select(-c(is_akp:lag_isoth)) %>% 
+  group_by(province, district) %>% 
+  mutate_at(
+    vars(akp_akp:oth_oth),  ~replace(., is.na(.), mean(.,na.rm = TRUE))
+  ) %>% 
+  mutate(
+    party = "other",
+    party = replace(party, akp_akp == 1, "akp_akp"),
+    party = replace(party, akp_chp == 1, "akp_chp"),
+    party = replace(party, chp_akp == 1, "chp_akp"),
+    party = replace(party, chp_chp == 1, "chp_chp")
+  )
+
+spec_14 <- toki_district   %>% 
+  subset( year > 2009 & year < 2019 ) %>% 
+  select(-c(is_akp:lag_isoth)) %>% 
+  group_by(province, district) %>% 
+  mutate_at(
+    vars(akp_akp:oth_oth),  ~replace(., is.na(.), mean(.,na.rm = TRUE))
+  ) %>% 
+  mutate(
+    party = "other",
+    party = replace(party, akp_akp == 1, "akp_akp"),
+    party = replace(party, akp_chp == 1, "akp_chp"),
+    party = replace(party, chp_akp == 1, "chp_akp"),
+    party = replace(party, chp_chp == 1, "chp_chp")
+  )  %>% 
+  subset( year > 2009 & year < 2019 )
 
